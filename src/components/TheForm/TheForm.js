@@ -45,6 +45,27 @@ const RawForm = ({ values, errors, touched, isSubmitting }) => (
       </Field>
       <ErrorMessage name="dropdown" component="div" />
     </div>
+    <br/>
+    <div name="radio-buttons-group">
+    <div>
+    <label>
+    <Field type="radio" name="radio" value="i can code in react" checked={values.radio === 'i can code in react'}/> 
+    i can code in react
+    </label>
+    </div>
+    <div>
+    <label>
+    <Field type="radio" name="radio" value="i cannot code in react" checked={values.radio === 'i cannot code in react'} /> 
+    i cannot code in react
+    </label>
+    </div>
+    <div>
+    <label>
+    <Field type="radio" name="radio" value="i am also gene roddenberry's cousin" checked={values.radio === 'i am also gene roddenberry\'s cousin'} /> 
+    i am also gene roddenberry's cousin
+    </label>
+    </div>
+    </div>
     <br />
     <div>
       <label>
@@ -91,6 +112,7 @@ const TheForm = withFormik({
     email,
     number,
     dropdown,
+    radio,
     iceCream,
     cottonCandy,
     cake,
@@ -101,6 +123,7 @@ const TheForm = withFormik({
       email: email || '',
       number: number || '',
       dropdown: dropdown || '',
+      radio: radio || 'i can code in react',
       iceCream: iceCream || false,
       cottonCandy: cottonCandy || false,
       cake: cake || false,
