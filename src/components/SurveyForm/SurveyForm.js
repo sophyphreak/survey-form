@@ -119,7 +119,7 @@ const RawForm = ({ values, errors, touched, isSubmitting }) => (
   </Form>
 );
 
-const TheForm = withFormik({
+const SurveyForm = withFormik({
   mapPropsToValues({
     name,
     email,
@@ -155,7 +155,7 @@ const TheForm = withFormik({
       .max(8, 'number must be less than 8'),
     dropdown: yup.string().required('you must make a choice')
   }),
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+  handleSubmit(values, { resetForm, setSubmitting }) {
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       resetForm();
@@ -165,4 +165,4 @@ const TheForm = withFormik({
   }
 })(RawForm);
 
-export default TheForm;
+export default SurveyForm;
